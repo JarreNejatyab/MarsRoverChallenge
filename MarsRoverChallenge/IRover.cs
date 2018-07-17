@@ -1,6 +1,8 @@
-﻿namespace MarsRoverChallenge
+﻿using System;
+
+namespace MarsRoverChallenge
 {
-    public interface IRover
+    public interface IRover : IDisposable
     {
         void TurnLeft();
         void TurnRight();

@@ -36,7 +36,12 @@ namespace MarsRoverChallenge
             var result1 = ParseInstruct(_instructions[2].ToCharArray(), _rover1);
             var result2 = ParseInstruct(_instructions[4].ToCharArray(), _rover2);
 
-            return $"{result1}{_rover1.X} {_rover1.Y} {_rover1.Direction}\r\n{result2}{_rover2.X} {_rover2.Y} {_rover2.Direction}";
+            var result = $"{result1}{_rover1.X} {_rover1.Y} {_rover1.Direction}\r\n{result2}{_rover2.X} {_rover2.Y} {_rover2.Direction}";
+
+            _rover1.Dispose();
+            _rover2.Dispose();
+
+            return result;
         }
 
         private string ParseInstruct(char[] t, IRover rover)
